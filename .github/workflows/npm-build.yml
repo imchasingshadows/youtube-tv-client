@@ -1,0 +1,24 @@
+name: NPM build
+
+on:
+  push:
+    branches:
+      - dependabot/npm_and_yarn/**
+      - feature/*
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+  packages: read
+
+jobs:
+  build:
+    name: Build Packages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+      - run: npm ci --include=dev
+      - run: npm run build

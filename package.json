@@ -1,37 +1,37 @@
 {
   "name": "youtube-tv-client",
-  "version": "1.0.1",
-  "description": "YouTube client that uses the TV interface",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "out/main/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
-    "build": "electron-builder"
+    "lint": "eslint --ext .ts,.tsx .",
+    "compile": "electron-webpack",
+    "build": "electron-vite build",
+    "build:win": "npm run build && electron-builder --win --config",
+    "build:mac": "npm run build && electron-builder --mac --config",
+    "build:linux": "npm run build && electron-builder --linux --config"
   },
-  "build": {
-    "appId": "com.haroon01.youtubetvclient",
-    "productName": "YouTubeTV",
-    "files": [
-      "index.js",
-      "package.json"
-    ],
-    "win": {
-      "target": ["portable"],
-      "icon": "img/icon/youtube.ico",
-      "artifactName": "${productName}_v${version}_x64_win.${ext}"
-    },
-    "linux": {
-      "target": ["AppImage"],
-      "icon": "img/icon/youtube.png",
-      "artifactName": "${productName}_v${version}_linux.${ext}",
-      "category": "Utility"
-    }
+  "devDependencies": {
+    "@ghostery/adblocker-electron": "^2.1.1",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
   },
   "keywords": [],
-  "author": "Haroon01",
-  "license": "ISC",
-  "devDependencies": {
-    "electron": "^31.3.0",
-    "electron-builder": "^24.13.3"
+  "author": {
+    "name": "Kay Simons",
+    "email": "kaysimons97@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-vite": "^2.3.0"
   }
 }
