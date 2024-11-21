@@ -1,23 +1,23 @@
 appId: com.imchasingshadows.youtubetv
 productName: YouTubeTV
 directories:
-  buildResources: build
-files: 
-  - '!**/.vscode/*'
-  - '!src/*'
-  - '!electron.vite.config.{js,ts,mjs,cjs}'
-  - '!{.eslintignore,.eslintrc.cjs,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
-  - '!{.env,.env.*,.npmrc,pnpm-lock.yaml}'
-  - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
+    buildResources: build
+files:
+    - '!**/.vscode/*'
+    - '!src/*'
+    - '!electron.vite.config.{js,ts,mjs,cjs}'
+    - '!{.eslintignore,.eslintrc.cjs,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
+    - '!{.env,.env.*,.npmrc,pnpm-lock.yaml}'
+    - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
 asarUnpack:
-  - resources/**
+    - resources/**
 win:
-  executableName: youtubetv
+    executableName: youtubetv
 linux:
-  category: Utility
-  maintainer: imchasingshadows
-  target:
-    - AppImage
+    category: Utility
+    maintainer: imchasingshadows
+    target:
+        - AppImage
 appImage:
-  artifactName: ${name}-${version}.${ext}
+    artifactName: ${name}-${version}.${ext}
 npmRebuild: false
